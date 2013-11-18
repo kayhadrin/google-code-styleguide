@@ -15,9 +15,11 @@ Introduction from the original Google Code Styleguide page: https://code.google.
 >
 > If your project requires that you create a new XML document format, our XML Document Format Style Guide may be helpful.
 > In addition to actual style rules, it also contains advice on designing your own vs. adapting an existing format, on XML instance document formatting, and on elements vs. attributes.
->
-> These style guides are licensed under the CC-By 3.0 License, which encourages you to share these documents.
-> See http://creativecommons.org/licenses/by/3.0/ for more details.
+
+# License
+
+These style guides are licensed under the CC-By 3.0 License, which encourages you to share these documents.
+See http://creativecommons.org/licenses/by/3.0/ for more details, or this local LICENSE.txt file in case their server was unavailable.
 
 # Reading instructions
 
