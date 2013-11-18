@@ -1,6 +1,15 @@
 # Google Code Styleguide
 
-Introduction from the original Google Code Styleguide page: https://code.google.com/p/google-styleguide/
+## Important
+
+All credit goes to Google for sharing their code style guide.
+I've merely imported their code to git and added an index file to facilitate reading.
+
+Note that I'll be customising some of it in the future though. @kayhadrin
+
+## Introduction
+
+Introduction from the original Google Code Style Guide page: https://code.google.com/p/google-styleguide/
 
 > Every major open-source project has its own style guide: a set of conventions (sometimes arbitrary) about how to write code for that project.
 > It is much easier to understand a large codebase when all the code in it is in a consistent style.
