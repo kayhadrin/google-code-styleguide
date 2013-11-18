@@ -30,7 +30,6 @@ See http://creativecommons.org/licenses/by/3.0/ for more details, or this local 
 	<h2>
 		Frontend languages
 	</h2>
-
 	<ul>
 		<li>
 			<a href="javascriptguide.xml">Javascript</a>
@@ -45,7 +44,6 @@ See http://creativecommons.org/licenses/by/3.0/ for more details, or this local 
 	<h2>
 		Data formats
 	</h2>
-
 	<ul>
 		<li>
 			<a href="jsoncstyleguide.xml">JSON format</a>
@@ -60,21 +58,18 @@ See http://creativecommons.org/licenses/by/3.0/ for more details, or this local 
 	<h2>
 		Backend languages
 	</h2>
-
 	<ul>
 		<li>
 			<a href="Rguide.xml">R Guide</a>
 		</li>
 		<li>
 			<a href="google-c-style.el">C Guide</a>
-
 			<div class="editor_config">
 				<a href="cpplint/README">cpplint README</a>
 			</div>
 		</li>
 		<li>
 			<a href="cppguide.xml">cpp Guide</a> <br/>
-
 			<div class="editor_config">
 				<a href="eclipse-cpp-google-style.xml">Eclipse cpp style config</a>
 			</div>
