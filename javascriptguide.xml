@@ -352,48 +352,48 @@
 		      With Backbone.Model:
 	      </p>
         <CODE_SNIPPET>
-	        var AnimalModel = Backbone.Model.extend({
-	          jump: function(){
-	            return 'jump';
-	          },
-	          talk: function(){
-	            return 'talk';
-	          }
-	        });
-
-	        var RabbitModel = AnimalModel.extend({
-		        talk: function(){
-		          return 'what\'s up Doc?';
-		        }
-	        });
-
-	        var bunny = new RabbitModel();
-	        bunny.jump(); // jump
-	        bunny.talk(); // what's up Doc?
+          var AnimalModel = Backbone.Model.extend({
+            jump: function(){
+              return 'jump';
+            },
+            talk: function(){
+              return 'talk';
+            }
+          });
+          
+          var RabbitModel = AnimalModel.extend({
+            talk: function(){
+              return 'what\'s up Doc?';
+            }
+          });
+          
+          var bunny = new RabbitModel();
+          bunny.jump(); // jump
+          bunny.talk(); // what's up Doc?
         </CODE_SNIPPET>
 
 	      <p>
 		      With base.js:
 	      </p>
         <CODE_SNIPPET>
-	        var Animal = Base.extend({
-	          jump: function(){
-	            return 'jump';
-	          },
-	          talk: function(){
-	            return 'talk';
-	          }
-	        });
-
-	        var Rabbit = Animal.extend({
-		        talk: function(){
-		          return 'what\'s up Doc?';
-		        }
-	        });
-
-	        var bunny = new Rabbit();
-	        bunny.jump(); // jump
-	        bunny.talk(); // what's up Doc?
+          var Animal = Base.extend({
+            jump: function(){
+              return 'jump';
+            },
+            talk: function(){
+              return 'talk';
+            }
+          });
+          
+          var Rabbit = Animal.extend({
+            talk: function(){
+              return 'what\'s up Doc?';
+            }
+          });
+          
+          var bunny = new Rabbit();
+          bunny.jump(); // jump
+          bunny.talk(); // what's up Doc?
         </CODE_SNIPPET>
       </BODY>
     </STYLEPOINT>
