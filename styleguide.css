@@ -150,3 +150,10 @@ blockquote {
   padding-left: 1em;
   margin-left: 1em;
 }
+
+.editor_config {
+  padding: 0 .5em;
+  margin: .5em;
+  line-height: 1.5em;
+  border-left: 3px dotted #b8d4e3;
+}
