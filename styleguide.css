@@ -145,3 +145,7 @@ hr {
   text-align: right;
 }
 
+blockquote {
+  border-left: 3px double #bbb;
+  padding-left: 1em;
+}
