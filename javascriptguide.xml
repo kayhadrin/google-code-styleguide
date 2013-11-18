@@ -2,7 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="styleguide.xsl"?>
 <GUIDE title="Google JavaScript Style Guide">
   <p class="revision">
-    
     Revision 2.93
   </p>
   
@@ -14,6 +13,7 @@
     Fritz Schneider<br/>
     Robby Walker<br/>
   </address>
+
   <OVERVIEW>
     <CATEGORY title="Important Note">
       <STYLEPOINT title="Displaying Hidden Details in this Guide">
@@ -35,24 +35,16 @@
     <CATEGORY title="Background">
       <p>
         JavaScript is the main client-side scripting language used
-        
+
         by many of Google's open-source
           projects.
         This style guide is a list of <em>do</em>s and <em>don't</em>s for
         JavaScript programs.
       </p>
-      
-      
-      
-      
-      
     </CATEGORY>
   </OVERVIEW>
+
   <CATEGORY title="JavaScript Language Rules">
-    
-
-    
-
     <STYLEPOINT title="var">
       <SUMMARY>
         Declarations with <code>var</code>: Always
@@ -99,8 +91,6 @@
              immutability is more subjective — objects should be
              considered immutable only if they do not demonstrate observable
              state change.  This is not enforced by the compiler.</p>
-
-           
            </SUBSECTION>
 
           <SUBSECTION title="Constant pointers (variables and properties)">
@@ -118,11 +108,9 @@
             <p>A <code>@const</code> annotation on a constructor implies the
               class cannot be subclassed (akin to <code>final</code> in Java).
             </p>
-
           </SUBSECTION>
 
           <SUBSECTION title="Examples">
-
             <p>Note that <code>@const</code> does not necessarily imply
               <code>CONSTANT_VALUES_CASE</code>.
 
@@ -274,7 +262,7 @@
           it is not part of ECMAScript (see
           <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMA-262</a>,
           clause 13 and 14). Worse implementations are inconsistent with each
-          other and with future EcmaScript proposals. ECMAScript only allows for
+          other and with future ECMAScript proposals. ECMAScript only allows for
           Function Declarations in the root statement list of a script or
           function. Instead use a variable initialized with a Function
           Expression to define a function within a block:</p>
@@ -354,21 +342,32 @@
           prototype. These hierarchies are much harder to get right than they
           first appear! </p>
 
-        <p>For that reason, it is best to use <code>goog.inherits()</code> from
-          <a href="http://code.google.com/closure/library/">
-            the Closure Library
-          </a>
-          or a similar library function.
+        <p>For that reason, it is best to use the <code>extend()</code> method
+	        from <a href="http://backbonejs.org">Backbone</a>,
+	        or <a href="http://dean.edwards.name/weblog/2006/03/base/">Base.js</a>
+          or any similar library function.
         </p>
-        <CODE_SNIPPET>
-          function D() {
-            goog.base(this)
-          }
-          goog.inherits(D, B);
 
-          D.prototype.method = function() {
-            ...
-          };
+        <CODE_SNIPPET>
+	        // With base.js
+	        var Animal = Base.extend({
+	          jump: function(){
+	            return 'jump';
+	          },
+	          talk: function(){
+	            return 'talk';
+	          }
+	        });
+
+	        var Rabbit = Animal.extend({
+		        talk: function(){
+		          return 'what\'s up Doc?';
+		        }
+	        });
+
+	        var bunny = new Rabbit();
+	        bunny.jump(); // jump
+	        bunny.talk(); // what's up Doc?
         </CODE_SNIPPET>
       </BODY>
     </STYLEPOINT>
