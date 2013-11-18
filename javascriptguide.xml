@@ -343,7 +343,7 @@
           first appear! </p>
 
         <p>For that reason, it is best to use the <code>extend()</code> method
-	        from <a href="http://backbonejs.org">Backbone</a>,
+	        from <a href="http://backbonejs.org/#Model-extend">Backbone</a>,
 	        or <a href="http://dean.edwards.name/weblog/2006/03/base/">Base.js</a>
           or any similar library function.
         </p>
