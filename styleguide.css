@@ -146,6 +146,7 @@ hr {
 }
 
 blockquote {
-  border-left: 3px double #bbb;
+  border-left: 3px double #b8d4e3;
   padding-left: 1em;
+  margin-left: 1em;
 }
