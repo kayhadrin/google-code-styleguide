@@ -333,12 +333,12 @@
       </BODY>
     </STYLEPOINT>
 
-    <STYLEPOINT title="Multi-level prototype hierarchies">
-      <SUMMARY>Not preferred</SUMMARY>
+    <STYLEPOINT title="Class inheritance (aka Multi-level prototype hierarchies)">
+      <SUMMARY>Use proven libraries</SUMMARY>
       <BODY>
         <p>Multi-level prototype hierarchies are how JavaScript implements
           inheritance. You have a multi-level hierarchy if you have a
-          user-defined class D with another user-defined class B as its
+          user-defined class B with another user-defined class A as its
           prototype. These hierarchies are much harder to get right than they
           first appear! </p>
 
@@ -348,8 +348,34 @@
           or any similar library function.
         </p>
 
+	      <p>
+		      With Backbone.Model:
+	      </p>
         <CODE_SNIPPET>
-	        // With base.js
+	        var AnimalModel = Backbone.Model.extend({
+	          jump: function(){
+	            return 'jump';
+	          },
+	          talk: function(){
+	            return 'talk';
+	          }
+	        });
+
+	        var RabbitModel = AnimalModel.extend({
+		        talk: function(){
+		          return 'what\'s up Doc?';
+		        }
+	        });
+
+	        var bunny = new RabbitModel();
+	        bunny.jump(); // jump
+	        bunny.talk(); // what's up Doc?
+        </CODE_SNIPPET>
+
+	      <p>
+		      With base.js:
+	      </p>
+        <CODE_SNIPPET>
 	        var Animal = Base.extend({
 	          jump: function(){
 	            return 'jump';
