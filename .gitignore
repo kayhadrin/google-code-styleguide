@@ -1,0 +1,109 @@
+##############################
+# Ignore generic BUILD files #
+##############################
+bin/*
+/bin
+*.class
+./target
+
+public/javascripts/min
+public/stylesheets/*.css
+
+########
+# Node #
+########
+node_modules
+npm-debug.log
+
+#################
+# Bower modules #
+#################
+bower_components
+
+####################
+# grunt temp files #
+####################
+.grunt
+
+####################
+# Windows OS stuff #
+####################
+Thumbs.db
+Desktop.ini
+
+#################
+# MAC OSX stuff #
+#################
+.DS_Store
+
+################
+# Git specific #
+################
+# This files allows "git daemon" to export the current repository
+# It should be ignored so that the current developer can choose to effectively share the repository or not
+git-daemon-export-ok
+
+########
+# SASS #
+########
+# D.HSC: Do not ignore sass output files for now because we haven't setup SASS compilation on test and prod environments 
+# style-sass.css
+# but we should ignore the sass cache folders
+.sass-cache
+
+########################
+# Tomcat related files #
+########################
+# ignore META-INF folder
+META-INF/
+
+################
+# Text editors #
+################
+*.bak
+*.lnk
+*.tmp
+*.marks
+.project
+*.project
+*.classpath
+*.iml
+*.marks
+.idea/*
+.metadata/*
+.settings/*
+.externalToolBuilders/*
+*~
+*.swp
+# Ignore Sublime editor config files
+*.sublime-workspace
+*.sublime-project
+# ignore "sublime text 2" temp files
+*#
+
+#########################################
+# More custom linux editor ignore rules #
+#########################################
+# /home/cb/.gitignore-boilerplates/Global/Emacs.gitignore
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+### /home/cb/.gitignore-boilerplates/Global/vim.gitignore
+.*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+# D.HSC: Do not ignore 'tags' because that's where the JSP custom tags are
+# tags 
+# TAGS

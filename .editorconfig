@@ -1,0 +1,23 @@
+; EditorConfig is awesome: http://EditorConfig.org
+; At this time of writing, EditorConfig plugins are currently available for:
+;
+;     Code::Blocks
+;     Emacs
+;     Geany
+;     Gedit
+;     jEdit
+;     Notepad++
+;     Sublime Text 2
+;     TextMate
+;     Vim
+;     Visual Studio
+
+; top-most EditorConfig file
+root = true
+
+; Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+; Tab indentation (no size specified)
+indent_style = tab
