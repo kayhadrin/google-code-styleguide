@@ -311,7 +311,11 @@
               <em>(Note that in JavaScript, Error is the root exception class)</em>
           </p>
           <CODE_SNIPPET>
-// Create InputTypeError class
+/**
+* Create InputTypeError class
+* @class InputTypeError
+* @extends Error
+*/
 var InputTypeError = function(msg) {
     this.message = 'InputTypeError: ' + msg;
 };
@@ -453,35 +457,71 @@ runTest(1, 0); // => generic error
     </STYLEPOINT>
 
     <STYLEPOINT title="Method and property definitions">
-      <SUMMARY><code>/** @constructor */
-        function SomeConstructor() {
-          this.someProperty = 1;
-        }
-        Foo.prototype.someMethod = function() { ... };</code></SUMMARY>
+      <SUMMARY>
+        <SUMMARY>Use proven libraries like <a href="http://backbonejs.org/#Model-extend">Backbone</a>,
+            or <a href="http://dean.edwards.name/weblog/2006/03/base/">Base.js</a></SUMMARY>
+
+      </SUMMARY>
       <BODY>
-        <p>While there are several ways to attach methods and properties to an
-          object created via "new", the preferred style for methods
-          is:</p>
+        <p>
+            While the original Google code standards recommend to define properties and methods within the contructor
+            and prototype respectively, this is done mainly for performance reasons.
+            We prefer to favor code readability and structure for easier maintenance.
+        </p>
+        <p>
+            Here's a code example made with Backbone.
+            Notice how the JSDoc annotations will help us generate better documentation too.
+        </p>
         <CODE_SNIPPET>
+// In backbone.js
+/**
+* Books collection
+* @class Books
+*/
+var Books = Backbone.Collection.extend();
+
+/**
+* @class Library
+*/
+var Library = Backbone.Model.extend(
+    /**
+    * @lends Library.prototype
+    */
+    {
+      initialize: function() {
+        // set an empty collection of books for each new created library object
+        this.set('books', new Books()); // where Books is a Backbone.Collection
+        return this;
+      },
+      totalCount: function() {
+        return this.get('books').length;
+      }
+    }
+);
+
+var lib = new Library({
+  name: 'NSW State Library'
+});
+lib.get('books').add({ title: 'Sponge bob' });
+console.log('lib.totalCount = ' + lib.totalCount()); // => lib.totalCount = 1
+        </CODE_SNIPPET>
+
+        <p>
+            Consequently, avoid defining class methods by accessing the prototype directly.
+        </p>
+        <BAD_CODE_SNIPPET>
           Foo.prototype.bar = function() {
             /* ... */
           };
-        </CODE_SNIPPET>
-        <p>The preferred style for other properties is to initialize the field
-          in the constructor:</p>
-        <CODE_SNIPPET>
+        </BAD_CODE_SNIPPET>
+
+        <p>Avoid defining classes purely with native JS, unless you really don't have to use Backbone or Base.js:</p>
+        <BAD_CODE_SNIPPET>
           /** @constructor */
           function Foo() {
             this.bar = value;
           }
-        </CODE_SNIPPET>
-        <SUBSECTION title="Why?">
-          <p>Current JavaScript engines optimize based on the "shape"
-            of an object, <a href="https://developers.google.com/v8/design#prop_access">
-            adding a property to an object (including overriding
-            a value set on the prototype) changes the shape and can degrade
-            performance.</a></p>
-        </SUBSECTION>
+        </BAD_CODE_SNIPPET>
       </BODY>
     </STYLEPOINT>
 
