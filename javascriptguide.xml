@@ -239,10 +239,10 @@
       </BODY>
     </STYLEPOINT>
 
-    <STYLEPOINT title="Nested functions (Closures)">
+    <STYLEPOINT title="Nested functions">
       <SUMMARY>Yes</SUMMARY>
       <BODY>
-        <p>Nested functions, also known as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures">Closures</a>, can be very useful, for example in the creation of
+        <p>Nested functions, can be very useful, for example in the creation of
           continuations and for the task of hiding helper functions. Feel free
           to use them.</p>
       </BODY>
