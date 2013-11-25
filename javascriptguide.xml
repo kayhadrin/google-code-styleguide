@@ -280,6 +280,18 @@
         <p>You basically can't avoid exceptions if you're doing something
           non-trivial (using an application development framework, etc.).
           Go for it.</p>
+
+          <CODE_SNIPPET>
+            function doSomething(param) {
+              if (param) {
+                return 'expected result';
+              }
+              throw new Error('doSomething(): missing parameter');
+            }
+
+            doSomething('blah'); // -> 'expected result'
+            doSomething(); // -> Error thrown
+          </CODE_SNIPPET>
       </BODY>
     </STYLEPOINT>
 
@@ -293,6 +305,48 @@
           error member.  These basically amount to a primitive exception
           handling hack. Feel free to use custom exceptions when
           appropriate.</p>
+
+          <p>
+              Here's an example of how to create a custom exception class. <br/>
+              <em>(Note that in JavaScript, Error is the root exception class)</em>
+          </p>
+          <CODE_SNIPPET>
+// Create InputTypeError class
+var InputTypeError = function(msg) {
+    this.message = 'InputTypeError: ' + msg;
+};
+InputTypeError.prototype = new Error;
+
+function divide(a, b) {
+    if ((typeof(a) !== 'number') || (typeof(b) !== 'number')) {
+        throw new InputTypeError('all input parameters have to be numbers.');
+    }
+    if (b === 0) {
+        throw new Error('cannot divide by zero');
+    }
+    return a / b;
+}
+
+// runs divide() within a try/catch for debugging
+function runTest(a, b) {
+    console.log('runTest: ' + a + ', ' + b);
+    try{
+        return divide(a, b);
+    }catch(err) {
+        console.error(err);
+        if (err instanceof InputTypeError) {
+            console.log('it is a InputTypeError');
+        } else {
+            console.log('it is a generic error');
+        }
+    }
+}
+
+// run tests
+runTest(10, 2); // => 5
+runTest(2, 'a'); // => InputTypeError
+runTest(1, 0); // => generic error
+          </CODE_SNIPPET>
       </BODY>
     </STYLEPOINT>
 
