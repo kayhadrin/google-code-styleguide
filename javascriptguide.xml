@@ -54,8 +54,8 @@
           When you fail to specify <code>var</code>,
           the variable gets placed in the global context, potentially clobbering
           existing values. Also, if there's no declaration, it's hard to tell in
-          what scope a variable lives (e.g., it could be in the Document or
-          Window just as easily as in the local scope). So always declare with
+          what scope a variable lives (e.g., it could be in the <code>document</code> or
+          <code>window</code> just as easily as in the local scope). So always declare with
           <code>var</code>.
         </DECISION>
       </BODY>
@@ -65,7 +65,7 @@
       <SUMMARY>
         <ul>
           <li>Use <code>NAMES_LIKE_THIS</code> for constant <em>values</em>.</li>
-          <li>Use <code>@const</code> to indicate a constant (non-overwritable)
+          <li>Use the <code>@constant</code> <a href="http://usejsdoc.org/tags-constant.html">JSDoc annotation</a> to indicate a constant (non-overwritable)
             <em>pointer</em> (a variable or property).</li>
           <li>Never use the
             <a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/const">
