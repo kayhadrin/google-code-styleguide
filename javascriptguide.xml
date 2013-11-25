@@ -311,7 +311,11 @@
               <em>(Note that in JavaScript, Error is the root exception class)</em>
           </p>
           <CODE_SNIPPET>
-// Create InputTypeError class
+/**
+* Create InputTypeError class
+* @class InputTypeError
+* @extends Error
+*/
 var InputTypeError = function(msg) {
     this.message = 'InputTypeError: ' + msg;
 };
